@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyStore - Online Shopping</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar" id="home">
+    <div class="nav-container">
+
+      <!-- Logo -->
+      <div class="nav-logo">
+        <a class="logo-icon" href="#home">
+          <img src="images/logo 1 (1).png" alt="logo" width="90" height="60">
+        </a>
+        <div class="logo-text">
+          <span class="logo-title">ONLINE SHOPPING</span>
+        </div>
+      </div>
+
+      <!-- Menu -->
+      <div class="nav-menu">
+        <a href="#recommendedSection" class="nav-link active">Home</a>
+        <a href="#manSection" class="nav-link">Men's</a>
+        <a href="#womenSection" class="nav-link">Women's</a>
+        <a href="#kidsSection" class="nav-link">Kid's</a>
+        <a href="#accessoriesSection" class="nav-link">Accessories</a>
+      </div>
+
+      <!-- Actions -->
+      <div class="nav-actions">
+        <!-- Search -->
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+          <i class="fas fa-search search-icon"></i>
+          <ul id="searchSuggestions" class="search-suggestions"></ul>
+        </div>
+
+        <!-- Cart -->
+        <button class="cart-btn" id="cartBtn" aria-label="Shopping Cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme">
+          <img src="images/moon.png" alt="Dark Mode" class="theme-icon" id="themeIcon">
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title" id="heroTitle">We Are Shop</h1>
+      <p class="hero-subtitle" id="heroSubtitle">Find What You Love Today ..</p>
+      <a href="#recommendedSection" class="cta-button" id="ctaButtonLink">Shop Now!</a>
+    </div>
+    <div class="hero-categories">
+      <a href="#womenSection">
+        <div class="category-card women-card">
+          <div class="category-overlay">
+            <h3>Women</h3>
+            <p>Best Clothes For Women</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="#manSection">
+        <div class="category-card men-card">
+          <div class="category-overlay">
+            <h3>Men</h3>
+            <p>Best Clothes For Men</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="#kidsSection">
+        <div class="category-card kids-card">
+          <div class="category-overlay">
+            <h3>Kids</h3>
+            <p>Best Clothes for Kids</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="#accessoriesSection">
+        <div class="category-card accessories-card">
+          <div class="category-overlay">
+            <h3>Accessories</h3>
+            <p>Best Trend Accessories</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== Product Sections ===== -->
+  <section class="product-sections">
+    <div class="product-section" id="recommendedSection">
+      <div class="section-header">
+        <h2 class="section-title">Recommended</h2>
+        <p class="section-subtitle">Details to details is what makes Shop different from the other themes</p>
+      </div>
+      <div class="product-grid" id="recommendedGrid"></div>
+    </div>
+
+    <div class="product-section" id="manSection">
+      <div class="section-header">
+        <h2 class="section-title">Man Items</h2>
+        <p class="section-subtitle">Details to details is what makes shop different from the other themes</p>
+      </div>
+      <div class="product-grid" id="manGrid"></div>
+    </div>
+
+    <div class="product-section" id="womenSection">
+      <div class="section-header">
+        <h2 class="section-title">Women Items</h2>
+        <p class="section-subtitle">Details to details is what makes shop different from the other themes</p>
+      </div>
+      <div class="product-grid" id="womenGrid"></div>
+    </div>
+
+    <div class="product-section" id="kidsSection">
+      <div class="section-header">
+        <h2 class="section-title">Kids Items</h2>
+        <p class="section-subtitle">Details to details is what makes shop different from the other themes</p>
+      </div>
+      <div class="product-grid" id="kidsGrid"></div>
+    </div>
+
+    <div class="product-section" id="accessoriesSection">
+      <div class="section-header">
+        <h2 class="section-title">Accessories</h2>
+        <p class="section-subtitle">Details to details is what makes shop different from the other themes</p>
+      </div>
+      <div class="product-grid" id="accessoriesGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== Product Popup ===== -->
+  <div class="product-popup" id="productPopup">
+  <div class="popup-content">
+    <button class="close-popup-btn" id="closePopupBtn" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <div class="popup-image-container">
+      <img src="" alt="Product Image" id="popupImage">
+    </div>
+
+    <div class="popup-details">
+      <p class="product-sku" id="popupSku"></p>
+      <h2 id="popupName">Product Name</h2>
+      <p class="popup-category">Category: <span id="popupCategory">N/A</span></p>
+
+      <div class="popup-price-rating">
+        <p class="popup-price" id="popupPrice">$0.00</p>
+        <div class="popup-rating" id="popupRating"></div>
+      </div>
+      
+      <p class="popup-description" id="popupDescription">A simple description goes here.</p>
+
+      <div class="product-options">
+        <div class="option-group">
+          <h4>Select Size:</h4>
+          <div class="size-options" id="sizeOptions">
+            <button class="size-btn">S</button>
+            <button class="size-btn selected">M</button>
+            <button class="size-btn">L</button>
+          </div>
+        </div>
+
+        <div class="option-group">
+          <h4>Select Color:</h4>
+          <div class="color-options" id="colorOptions">
+            <button class="color-btn selected" style="background-color: #fff;" data-color="white"></button>
+            <button class="color-btn" style="background-color: #c57d7d;" data-color="black"></button>
+            <button class="color-btn" style="background-color: #2c8ff1;" data-color="navy"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="shipping-return">
+        <p><i class="fas fa-truck-fast"></i> Free shipping on orders over $50.</p>
+        <p><i class="fas fa-arrow-right-arrow-left"></i> Easy 30-day returns.</p>
+      </div>
+
+      <button class="add-to-cart-popup-btn" id="addToCartPopupBtn">
+        <i class="fas fa-shopping-cart"></i> Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+  <!-- ===== Footer ===== -->
+<footer class="footer">
+    <div class="footer-content">
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="https://www.instagram.com/yourpage" target="_blank" class="social-link">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/yourpage" target="_blank" class="social-link">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://www.twitter.com/yourpage" target="_blank" class="social-link">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+      <p class="footer-text">© 2025 Shop. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===== Cart Sidebar ===== -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Shopping Cart</h3>
+      <button class="close-cart" id="closeCart">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <strong>Total: $<span id="cartTotal">0.00</span></strong>
+      </div>
+      <button class="clear-cart-btn" id="clearCartBtn">Clear All</button>
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
